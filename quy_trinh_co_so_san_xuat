@@ -1,0 +1,55 @@
+digraph {
+	nodesep=0.6 rankdir=LR ranksep=0.9
+	node [shape=box]
+	label_P1 [label=P1 shape=plaintext]
+	R1a [label="Reactor P1-1"]
+	E1a [label="Extruder P1-1"]
+	R1b [label="Reactor P1-2"]
+	E1b [label="Extruder P1-2"]
+	PK1_1 [label="Pkg.Mch.P1-1"]
+	PK1_2 [label="Pkg.Mch.P1-2"]
+	Out1_1 [label="" shape=point width=0]
+	Out1_2 [label="" shape=point width=0]
+	label_P1 -> R1a
+	label_P1 -> R1b
+	R1a -> E1a
+	R1b -> E1b
+	E1a -> PK1_1
+	E1a -> PK1_2
+	E1b -> PK1_1
+	E1b -> PK1_2
+	PK1_1 -> Out1_1
+	PK1_2 -> Out1_2
+	label_P0 [label=P0 shape=plaintext]
+	R0 [label="Reactor P0-1"]
+	E0 [label="Extruder P0-1"]
+	PK0_1 [label="Pkg.Mch.P0-1"]
+	PK0_2 [label="Pkg.Mch.P0-2"]
+	Out0_1 [label="" shape=point width=0]
+	Out0_2 [label="" shape=point width=0]
+	label_P0 -> R0
+	R0 -> E0
+	E0 -> PK0_1
+	E0 -> PK0_2
+	PK0_1 -> Out0_1
+	PK0_2 -> Out0_2
+	{
+		rank=same
+		R0
+		R1a
+		R1b
+	}
+	{
+		rank=same
+		E0
+		E1a
+		E1b
+	}
+	{
+		rank=same
+		PK0_1
+		PK0_2
+		PK1_1
+		PK1_2
+	}
+}
